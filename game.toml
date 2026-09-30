@@ -6,7 +6,9 @@ name = "Mega Man Legends"
 id = "SLES-01485"
 players = 1
 exe = "disc/SLES_014.85"
-disc = ""
+disc = "disc/Mega Man Legends (Europe).cue"
+discs = ["disc/Mega Man Legends (Europe).cue"]
+disc_serials = ["SLES-01485"]
 load_address = "0x80010000"
 entry_pc = "0x800123B8"
 text_size = "0x00049000"
@@ -15,7 +17,7 @@ stack_base = "0x801FFFF0"
 # Digests are for data Track 01 (first BINARY FILE / TRACK 01).
 [prepare_disc]
 out_dir = "disc"
-bin_name = "Mega Man Legends (Europe) (Track 01).bin"
+bin_name = "Mega Man Legends (Europe) (Track 1).bin"
 cue_name = "Mega Man Legends (Europe).cue"
 boot_exe = "SLES_014.85"
 known_sizes = [538431600, 575828400]
@@ -33,11 +35,13 @@ known_crc32 = [
 ]
 
 [recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
 [runtime]
+openbios = false
 window_title = "mega-man-legends- Recompiled"
 memcard_dir = "saves"
 
